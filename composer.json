@@ -1,0 +1,21 @@
+{
+    "name": "96qbhy/vbot-express",
+    "description": "简单的快递查询接口。",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "96qbhy",
+            "email": "96qbhy@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "require-dev": {
+        "hanson/vbot": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Qbhy\\VbotExpress\\": "src/"
+        }
+    }
+}
