@@ -2,8 +2,11 @@
 
 namespace Qbhy\VbotExpress;
 
+use GuzzleHttp\Client;
 use Hanson\Vbot\Extension\AbstractMessageHandler;
+use Hanson\Vbot\Message\Text;
 use Illuminate\Support\Collection;
+use Qbhy\Express\Express;
 
 class VbotExpress extends AbstractMessageHandler
 {
@@ -19,11 +22,31 @@ class VbotExpress extends AbstractMessageHandler
     public function register()
     {
         // TODO: Implement register() method.
-        //稍等片刻
+
+        //初始化 http 客户端
+        Express::$http = new Client();
+
     }
 
-    public function handler(Collection $collection)
+    public function handler(Collection $message)
     {
-        // TODO: Implement handler() method.
+        if ($message['type'] === 'text' and strpos($message['content'], '查快递 ') === 0 and strlen($message['content']) > 4) {
+            /**
+             * 快递单号
+             */
+            $postId = str_replace('查快递 ', '', $message['content']);
+            $username = $message['from']['UserName'];
+            $result = Express::query($postId);
+            if (is_string($result)) {
+                return Text::send($username, $result);
+            } else {
+                $str = '';
+                foreach ($result['data'] as $item) {
+                    $str .= '| ' . $item['context'] . ' - ' . $item['time'] . PHP_EOL;
+                }
+                return Text::send($username, $str);
+            }
+        }
+        return null;
     }
 }

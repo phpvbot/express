@@ -9,6 +9,7 @@
         }
     ],
     "require": {
+        "96qbhy/express": "dev-master"
     },
     "require-dev": {
         "hanson/vbot": "^2.0"
