@@ -17,6 +17,9 @@ $ composer require 96qbhy/vbot-express:dev-master
     ]);
     
     //...
-
 ```
+
+
+## 使用示例
+![使用示例](example.png)
 
