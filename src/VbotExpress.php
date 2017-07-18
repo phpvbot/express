@@ -22,29 +22,24 @@ class VbotExpress extends AbstractMessageHandler
     public function register()
     {
         // TODO: Implement register() method.
-
-        //初始化 http 客户端
-        Express::$http = new Client();
-
     }
 
     public function handler(Collection $message)
     {
         if ($message['type'] === 'text' and strpos($message['content'], '查快递 ') === 0 and strlen($message['content']) > 4) {
-            /**
-             * 快递单号
-             */
             $postId = str_replace('查快递 ', '', $message['content']);
             $username = $message['from']['UserName'];
             $result = Express::query($postId);
             if (is_string($result)) {
                 return Text::send($username, $result);
-            } else {
+            } else if ($result['status'] === 6) {
                 $str = '';
                 foreach ($result['data'] as $item) {
                     $str .= '| ' . $item['context'] . ' - ' . $item['time'] . PHP_EOL;
                 }
                 return Text::send($username, $str);
+            } else {
+                return Text::send($username, $result['reason']);
             }
         }
         return null;
