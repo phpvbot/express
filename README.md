@@ -21,5 +21,5 @@ $ composer require 96qbhy/vbot-express:dev-master
 
 
 ## 使用示例
-![使用示例](example.png)
+![使用示例](https://raw.githubusercontent.com/96qbhy/vbot-express/master/example.png)
 
