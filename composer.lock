@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a08952fcf0a10bef8ae716c068011650",
+    "content-hash": "9dcb49d5f75d85b09e0a81dcb1389f43",
     "packages": [
         {
             "name": "96qbhy/express",
-            "version": "dev-master",
+            "version": "1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/96qbhy/express.git",
@@ -45,7 +45,7 @@
                 "快递",
                 "快递查询"
             ],
-            "time": "2017-07-18 15:52:24"
+            "time": "2017-07-18T15:52:24+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1417,9 +1417,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "96qbhy/express": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
