@@ -11,7 +11,7 @@
 ## 安装
 
 ```
-composer require 96qbhy/vbot-express:dev-master
+composer require vbot/express:dev-master
 ```
 
 ## 扩展属性
