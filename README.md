@@ -11,7 +11,7 @@
 ## 安装
 
 ```
-composer require vbot/express:dev-master
+composer require vbot/express
 ```
 
 ## 扩展属性
