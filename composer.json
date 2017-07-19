@@ -2,7 +2,6 @@
     "name": "96qbhy/vbot-express",
     "description": "简单的快递查询接口。",
     "license": "MIT",
-    "version": "1.0.0",
     "authors": [
         {
             "name": "96qbhy",
