@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/96qbhy/express.git",
-                "reference": "4dada29dba81fb5c46dd6dcdb8e877430255fa3e"
+                "reference": "65be095483d87bd9bf93e6b64dbecbc3a039ecb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/96qbhy/express/4dada29dba81fb5c46dd6dcdb8e877430255fa3e.zip",
-                "reference": "4dada29dba81fb5c46dd6dcdb8e877430255fa3e",
+                "url": "https://files.phpcomposer.com/files/96qbhy/express/65be095483d87bd9bf93e6b64dbecbc3a039ecb0.zip",
+                "reference": "65be095483d87bd9bf93e6b64dbecbc3a039ecb0",
                 "shasum": ""
             },
             "require": {
@@ -45,7 +45,7 @@
                 "快递",
                 "快递查询"
             ],
-            "time": "2017-07-18 14:18:21"
+            "time": "2017-07-18 15:52:24"
         },
         {
             "name": "guzzlehttp/guzzle",

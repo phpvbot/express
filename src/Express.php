@@ -1,14 +1,13 @@
 <?php
 
-namespace Qbhy\VbotExpress;
+namespace Vbot\Express;
 
-use GuzzleHttp\Client;
 use Hanson\Vbot\Extension\AbstractMessageHandler;
 use Hanson\Vbot\Message\Text;
 use Illuminate\Support\Collection;
-use Qbhy\Express\Express;
+use Qbhy\Express\Express as QbhyExpress;
 
-class VbotExpress extends AbstractMessageHandler
+class Express extends AbstractMessageHandler
 {
 
     public $author = '96qbhy';
@@ -29,11 +28,11 @@ class VbotExpress extends AbstractMessageHandler
         if ($message['type'] === 'text' and strpos($message['content'], '查快递 ') === 0 and strlen($message['content']) > 4) {
             $postId = str_replace('查快递 ', '', $message['content']);
             $username = $message['from']['UserName'];
-            $result = Express::query($postId);
+            $result = QbhyExpress::query($postId);
             if (is_string($result)) {
                 return Text::send($username, $result);
             } else if ($result['status'] === 6) {
-                $str = '';
+                $str = "快递单号: $postId, 快递公司: $result[company]" . PHP_EOL;
                 foreach ($result['data'] as $item) {
                     $str .= '| ' . $item['context'] . ' - ' . $item['time'] . PHP_EOL;
                 }
